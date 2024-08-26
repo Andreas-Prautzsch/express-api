@@ -14,13 +14,13 @@ if (!modelName) {
 const modelNameCapitalized = modelName.charAt(0).toUpperCase() + modelName.slice(1);
 
 // Erstelle das Sequelize-Modell
-execSync(`npx sequelize-cli model:generate --name ${modelNameCapitalized} --attributes name:string`);
+execSync(`npx sequelize-cli model:generate --name ${modelName} --attributes name:string`);
 
 // Routen-Template mit Swagger-Kommentaren
 const routeTemplate = `
 const express = require('express');
 const router = express.Router();
-const { ${modelNameCapitalized} } = require('../models'); // Pfad angepasst
+const ${modelName} = require('../models/${modelName}');
 
 /**
  * @swagger

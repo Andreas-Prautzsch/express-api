@@ -23,7 +23,7 @@ const swaggerOptions = {
       },
     ],
   },
-  apis: ['./src/routes/*.js'], // Pfad zu den Routen-Dateien, in denen die Swagger-Kommentare stehen
+  apis: ['./routes/*.js'], // Pfad zu den Routen-Dateien, in denen die Swagger-Kommentare stehen
 };
 
 const swaggerDocs = swaggerJsdoc(swaggerOptions);
