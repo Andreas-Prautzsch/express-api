@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node src/app.js",
     "dev": "nodemon src/app.js",
-    "sequelize": "npx sequelize-cli"
+    "sequelize": "npx sequelize-cli",
+    "generate:model": "node src/helper/generateModelWithRoutes.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
