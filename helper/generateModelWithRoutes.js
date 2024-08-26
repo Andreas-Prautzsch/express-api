@@ -20,7 +20,7 @@ execSync(`npx sequelize-cli model:generate --name ${modelNameCapitalized} --attr
 const routeTemplate = `
 const express = require('express');
 const router = express.Router();
-const { ${modelNameCapitalized} } = require('../../models'); // Pfad angepasst
+const { ${modelNameCapitalized} } = require('../models'); // Pfad angepasst
 
 /**
  * @swagger

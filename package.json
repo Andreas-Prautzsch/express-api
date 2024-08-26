@@ -2,12 +2,12 @@
   "name": "my-app",
   "version": "1.0.0",
   "description": "",
-  "main": "src/app.js",
+  "main": "app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "start": "node app.js",
+    "dev": "nodemon app.js",
     "sequelize": "npx sequelize-cli",
-    "generate:model": "node src/helper/generateModelWithRoutes.js"
+    "generate:model": "node ./helper/generateModelWithRoutes.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
