@@ -42,7 +42,7 @@ const JWT_SECRET = process.env.JWT_SECRET || 'your_jwt_secret';
  *       400:
  *         description: Fehlerhafte Anfrage
  */
-router.post('/register', async (req, res) => {
+router.post( '/auth/register', async ( req, res ) => {
     const { email, password } = req.body;
     try {
         const existingUser = await User.findOne({ where: { email } });
@@ -86,7 +86,7 @@ router.post('/register', async (req, res) => {
  *       500:
  *         description: Fehler beim Anmelden
  */
-router.post('/login', async (req, res) => {
+router.post('/auth/login', async (req, res) => {
     const { email, password } = req.body;
     try {
         const user = await User.findOne({ where: { email } });
@@ -132,7 +132,7 @@ router.post('/login', async (req, res) => {
  *       500:
  *         description: Fehler beim Generieren des Tokens
  */
-router.post('/forgot-password', async (req, res) => {
+router.post('/auth/forgot-password', async (req, res) => {
     const { email } = req.body;
     try {
         const user = await User.findOne({ where: { email } });
@@ -178,7 +178,7 @@ router.post('/forgot-password', async (req, res) => {
  *       500:
  *         description: Fehler beim Zurücksetzen des Passworts
  */
-router.post('/reset-password', async (req, res) => {
+router.post('/auth/reset-password', async (req, res) => {
     const { token, newPassword } = req.body;
     try {
         const decoded = jwt.verify(token, JWT_SECRET);
@@ -206,7 +206,7 @@ router.post('/reset-password', async (req, res) => {
  *       200:
  *         description: Erfolgreich abgemeldet
  */
-router.post('/logout', (req, res) => {
+router.post('/auth/logout', (req, res) => {
     // Im einfachsten Fall löschen wir das Token auf der Client-Seite
     res.json({ message: 'Logged out successfully' });
 });

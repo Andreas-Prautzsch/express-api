@@ -5,11 +5,11 @@ const sequelize = require('../config/database'); // Stelle sicher, dass du die S
 const User = sequelize.define('User', {
     firstname: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     lastname: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
     },
     email: {
         type: DataTypes.STRING,
