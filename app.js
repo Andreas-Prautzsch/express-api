@@ -3,13 +3,15 @@ const express = require('express');
 const swaggerUi = require('swagger-ui-express');
 const swaggerJsdoc = require('swagger-jsdoc');
 const helmet = require('helmet');
+const cors = require( 'cors' );
+
 const app = express();
 const loadRoutes = require('./helper/loadRoutes');
 require('dotenv').config();
 
 const port = process.env.PORT || 3002;
 
-
+app.use(cors());
 app.use(
   helmet({
     contentSecurityPolicy: {
