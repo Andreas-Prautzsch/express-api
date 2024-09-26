@@ -13,7 +13,7 @@ RUN npm install --production
 COPY . .
 
 # Exponiere den Port der Anwendung
-EXPOSE 3000
+EXPOSE 3002
 
 # Standardbefehl: Migrationen ausführen und dann die App starten
 CMD npx sequelize-cli db:migrate && npm start

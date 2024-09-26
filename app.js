@@ -7,7 +7,7 @@ const app = express();
 const loadRoutes = require('./helper/loadRoutes');
 require('dotenv').config();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3002;
 
 
 app.use(
